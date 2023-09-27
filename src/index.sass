@@ -1,3 +1,5 @@
+@import 'utilities/sass/colors'
+
 @font-face
   font-family: 'SF UI Display'
   font-style: normal
@@ -20,6 +22,13 @@
   font-weight: 300
   src: local('SF UI Display Light'), url('./fonts/sf-ui-display-light-58646b33e0551.woff') format('woff')
 
+
+
+@font-face
+  font-family: 'SF UI Display'
+  font-style: normal
+  font-weight: 400
+  src: url('./fonts/sf-ui-display-regular.ttf')
 
 
 @font-face
@@ -61,13 +70,14 @@
   src: local('SF UI Display Black'), url('./fonts/sf-ui-display-black-58646a6b80d5a.woff') format('woff')
 
 
-
 body
-  margin: 0
   font-family: 'SF UI Display', serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
+*
+  box-sizing: border-box
+  color: $text
 
 code
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace

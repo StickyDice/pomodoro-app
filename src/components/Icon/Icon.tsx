@@ -1,13 +1,32 @@
-import React from 'react';
-import styles from './icon.sass';
+import React from "react";
+import styles from "./icon.module.sass";
+import classNames from "classnames";
 
 export enum EIcons {
-   pomodoroIcon = 'pomodoroIcon'
+   pomodoroIcon = "pomodoroIcon",
+   equalizerIcon = "equalizerIcon",
+   addIcon = "addIcon",
+   increaseIcon = "increaseIcon",
+   decreaseIcon = "decreaseIcon",
+   editIcon = "editIcon",
+   deleteIcon = "deleteIcon",
+   closeIcon = "closeIcon"
 }
 
 export type iconType = EIcons.pomodoroIcon
+   | EIcons.equalizerIcon
+   | EIcons.addIcon
+   | EIcons.decreaseIcon
+   | EIcons.editIcon
+   | EIcons.increaseIcon
+   | EIcons.deleteIcon
+   | EIcons.closeIcon
 
-export function Icon( {name} : {name: iconType} ) {
+export function Icon( { name, size }: { name: iconType, size?: number } ) {
+   let iconClass = 'icon';
+   if (size) {
+      iconClass = classNames(styles[`px${size}`]);
+   }
    const icons = {
       pomodoroIcon: (
          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -30,10 +49,84 @@ export function Icon( {name} : {name: iconType} ) {
          </svg>
 
       ),
+      equalizerIcon: ( <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_18345_122)">
+               <path d="M10 20H14V4H10V20ZM4 20H8V12H4V20ZM16 9V20H20V9H16Z" fill="#DC3E22"/>
+            </g>
+            <defs>
+               <clipPath id="clip0_18345_122">
+                  <rect width="24" height="24" fill="white"/>
+               </clipPath>
+            </defs>
+         </svg>
+      ),
+      addIcon: (
+         <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="25" cy="25" r="25" fill="#C4C4C4"/>
+            <path d="M26.2756 26.1321V33H23.7244V26.1321H17V23.7029H23.7244V17H26.2756V23.7029H33V26.1321H26.2756Z"
+                  fill="white"/>
+         </svg>
+      ),
+      increaseIcon: (
+         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+               d="M8.75 4.25H7.25V7.25H4.25V8.75H7.25V11.75H8.75V8.75H11.75V7.25H8.75V4.25ZM8 0.5C3.8675 0.5 0.5 3.8675 0.5 8C0.5 12.1325 3.8675 15.5 8 15.5C12.1325 15.5 15.5 12.1325 15.5 8C15.5 3.8675 12.1325 0.5 8 0.5ZM8 14C4.6925 14 2 11.3075 2 8C2 4.6925 4.6925 2 8 2C11.3075 2 14 4.6925 14 8C14 11.3075 11.3075 14 8 14Z"
+               fill="#A8B64F"/>
+         </svg>
+      ),
+      decreaseIcon: (
+         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_34_33)">
+               <path
+                  d="M9 1.5C4.8675 1.5 1.5 4.8675 1.5 9C1.5 13.1325 4.8675 16.5 9 16.5C13.1325 16.5 16.5 13.1325 16.5 9C16.5 4.8675 13.1325 1.5 9 1.5ZM9 15C5.6925 15 3 12.3075 3 9C3 5.6925 5.6925 3 9 3C12.3075 3 15 5.6925 15 9C15 12.3075 12.3075 15 9 15Z"
+                  fill="#C4C4C4"/>
+               <path d="M5.25 8.25H8.25H9.75H12.75V9.75H9.75H8.25H5.25V8.25Z" fill="#C4C4C4"/>
+            </g>
+            <defs>
+               <clipPath id="clip0_34_33">
+                  <rect width="18" height="18" fill="white"/>
+               </clipPath>
+            </defs>
+         </svg>
+      ),
+      editIcon: (
+         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_35_33)">
+               <path
+                  d="M10.545 6.765L11.235 7.455L4.44 14.25H3.75V13.56L10.545 6.765ZM13.245 2.25C13.0575 2.25 12.8625 2.325 12.72 2.4675L11.3475 3.84L14.16 6.6525L15.5325 5.28C15.825 4.9875 15.825 4.515 15.5325 4.2225L13.7775 2.4675C13.6275 2.3175 13.44 2.25 13.245 2.25ZM10.545 4.6425L2.25 12.9375V15.75H5.0625L13.3575 7.455L10.545 4.6425Z"
+                  fill="#A8B64F"/>
+            </g>
+            <defs>
+               <clipPath id="clip0_35_33">
+                  <rect width="18" height="18" fill="white"/>
+               </clipPath>
+            </defs>
+         </svg>
+      ),
+      deleteIcon: (
+         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_35_21)">
+               <path
+                  d="M12 6.75V14.25H6V6.75H12ZM10.875 2.25H7.125L6.375 3H3.75V4.5H14.25V3H11.625L10.875 2.25ZM13.5 5.25H4.5V14.25C4.5 15.075 5.175 15.75 6 15.75H12C12.825 15.75 13.5 15.075 13.5 14.25V5.25Z"
+                  fill="#A8B64F"/>
+            </g>
+            <defs>
+               <clipPath id="clip0_35_21">
+                  <rect width="18" height="18" fill="white"/>
+               </clipPath>
+            </defs>
+         </svg>
+      ),
+      closeIcon: (
+         <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.9115 8.80583L2.84406 13.9567L0.961665 12.0433L6.02911 6.89245L1.0675 1.84914L2.85992 0.0272091L7.82153 5.07052L12.7673 0.0433371L14.6497 1.95672L9.70392 6.9839L14.6655 12.0272L12.8731 13.8491L7.9115 8.80583Z" fill="#C4C4C4"/>
+         </svg>
+      )
+
    };
 
    return (
-      <div>
+      <div className={iconClass}>
          {icons[name]}
       </div>
    );

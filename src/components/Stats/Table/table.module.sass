@@ -1,0 +1,65 @@
+@import "../../../utilities/sass/colors"
+
+.gridContainer
+  display: flex
+  gap: 32px
+  flex-wrap: wrap
+
+.box1,
+.box3
+  width: 296px
+  flex-basis: 100%
+
+.box3
+  position: relative
+  max-height: 179px
+
+.box2
+  width: 952px
+  height: 471px
+
+.box4,
+.box5,
+.box6
+  width: 405px
+
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6
+  background-color: $whiteF4
+
+.box4,
+.box5,
+.box6
+  min-height: 179px
+
+.box1,
+.box3,
+.box4,
+.box5,
+.box6
+  padding: 25px
+
+.topContainer
+  display: flex
+  gap: 32px
+
+.topLeftContainer
+  display: flex
+  flex-direction: column
+  gap: 32px
+
+.emptyTomato
+  position: absolute
+  top: calc(50% - 57px)
+  left: calc(50% - 57px)
+  object-fit: contain
+
+.boxTitle
+  margin: 0
+  font-size: 24px
+  font-weight: 700
+  line-height: 33px

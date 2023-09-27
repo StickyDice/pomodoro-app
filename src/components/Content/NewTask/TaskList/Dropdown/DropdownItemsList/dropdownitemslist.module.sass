@@ -1,0 +1,35 @@
+@import '../../../../../../utilities/sass/colors'
+
+.dropdownList
+  position: relative
+  list-style: none
+  padding: 7px 0
+  margin: 0
+  border: 1px solid $greyC4
+
+.dropdownList::after, .dropdownList::before
+  content: ''
+  position: absolute
+  left: 76px
+  top: -12px
+  border: 6px solid transparent
+  border-bottom: 6px solid $greyC4
+
+.dropdownList::after
+  border-bottom: 6px solid $white
+  top: -11px
+
+.dropdownListItem
+  display: flex
+  gap: 7px
+  padding: 8px 10px 7px 15px
+  cursor: pointer
+
+.dropdownListItem:hover
+  background-color: $whiteF4
+
+.itemText
+  font-size: 16px
+  font-weight: 300
+  line-height: 17px
+  color: $grey99

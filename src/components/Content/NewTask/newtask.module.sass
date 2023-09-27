@@ -1,0 +1,34 @@
+@import '../../../utilities/sass/colors'
+
+.taskForm
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  margin-bottom: 26px
+
+  .input
+    width: 370px
+    margin-bottom: 25px
+    padding: 18px 0 18px 14px
+    background-color: $whiteF4
+    border: none
+
+  .input::placeholder
+    color: $grey99
+
+  .input:focus-visible
+    outline: none
+
+  .button
+    padding: 19px 50px
+    font-size: 16px
+    font-weight: 500
+    line-height: 17px
+    color: $white
+    background-color: $military
+    border: none
+    transition: background-color .3s ease-in-out
+    cursor: pointer
+
+  .button:hover
+    background-color: $militaryHover

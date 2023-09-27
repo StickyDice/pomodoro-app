@@ -1,0 +1,134 @@
+@import "../../utilities/sass/colors"
+
+.background
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: #9F210C
+
+.pos
+  position: absolute
+  top: calc(50% - 362px)
+  left: calc(50% - 312px)
+  padding-top: 200px
+  background-image: url("../../images/loginTomato.png")
+  background-position: 49% top
+  background-repeat: no-repeat
+
+
+.modal
+  display: flex
+  flex-direction: column
+  align-items: center
+  width: 624px
+  height: 356px
+  padding: 25px
+  background-color: $redHover
+
+.title
+  margin: 0 0 25px
+  font-size: 24px
+  font-weight: 700
+  line-height: 24px
+  color: $white
+
+.form
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  .formInput
+    width: 370px
+    margin-bottom: 26px
+    padding: 18px 0 18px 14px
+    background-color: $white
+    border: none
+
+  input:focus-visible
+    outline: none
+
+.signupButton
+  padding: 18px 50px
+  margin-bottom: 26px
+  font-size: 16px
+  font-weight: 500
+  line-height: 17px
+  color: $white
+  background-color: $military
+  border: none
+  transition: background-color .3s ease-in-out
+
+.signupButton:disabled,
+.signupButton:disabled:hover
+  background-color: $grey99
+  cursor: default
+
+.signupButton:hover
+  background-color: $militaryHover
+  cursor: pointer
+
+.checkboxContainer
+  position: relative
+  display: flex
+
+.checkbox
+  position: relative
+  width: 0
+  height: 0
+
+.checkbox::before
+  content: ""
+  position: absolute
+  display: block
+  top: 1px
+  left: 0
+  width: 13px
+  height: 13px
+  border: 1px solid $white
+
+.checkbox:checked::after
+  content: ""
+  position: absolute
+  top: 4px
+  left: 2px
+  width: 10px
+  height: 7px
+  background-image: url("../../images/Rectangle 44.svg")
+  background-repeat: no-repeat
+  background-position: center
+  background-size: contain
+
+.checkboxLabel
+  padding-left: 26px
+  font-size: 14px
+  font-weight: 400
+  color: $white
+
+.pomodoro
+  margin: 0 0 24px
+  font-size: 24px
+  font-weight: 300
+  line-height: 24px
+  color: $white
+  text-align: center
+
+.rights
+  position: absolute
+  left: 47.6%
+  bottom: 19px
+  font-size: 10px
+  font-weight: 400
+  color: $white
+
+.fieldContainer
+  position: relative
+
+.errorMessage
+  position: absolute
+  top: -1px
+  left: 100px
+  color: green

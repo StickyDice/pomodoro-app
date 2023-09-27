@@ -1,0 +1,57 @@
+@import '../../../../../utilities/sass/colors'
+
+.listItem
+  position: relative
+  display: flex
+  align-items: center
+  gap: 10px
+  padding: 15px 0
+  font-size: 16px
+  font-weight: 300
+  line-height: 17px
+
+.listItem
+  border-top: 1px solid $greyE4
+
+.listItem:last-child
+  border-bottom: 1px solid $greyE4
+
+.tomatoWrapper
+  position: relative
+  width: 25px
+  height: 25px
+  border: 1px solid $greyC4
+  border-radius: 100%
+
+.tomatoCount
+  position: absolute
+  top: 3px
+  left: 8px
+  font-size: 16px
+  font-weight: 300
+  line-height: 17px
+
+.dropdownButton:hover
+  background-color: $whiteF4
+
+.buttonCircle
+  width: 6px
+  height: 6px
+  background-color: $greyC4
+  border-radius: 100%
+
+
+.dropdownButton
+  position: absolute
+  top: 10px
+  right: -5px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  width: 36px
+  height: 36px
+  padding: 5px
+  background-color: transparent
+  border: none
+  border-radius: 100%
+  transition: background-color .2s ease-in-out
