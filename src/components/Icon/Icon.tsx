@@ -10,7 +10,8 @@ export enum EIcons {
    decreaseIcon = "decreaseIcon",
    editIcon = "editIcon",
    deleteIcon = "deleteIcon",
-   closeIcon = "closeIcon"
+   closeIcon = "closeIcon",
+   arrowIcon = "arrowIcon"
 }
 
 export type iconType = EIcons.pomodoroIcon
@@ -21,11 +22,12 @@ export type iconType = EIcons.pomodoroIcon
    | EIcons.increaseIcon
    | EIcons.deleteIcon
    | EIcons.closeIcon
+   | EIcons.arrowIcon
 
-export function Icon( { name, size }: { name: iconType, size?: number } ) {
+export function Icon( { name, size }: { name: iconType, size?: Array<number> } ) {
    let iconClass = 'icon';
    if (size) {
-      iconClass = classNames(styles[`px${size}`]);
+      iconClass = classNames(styles[`s${size[0]}-${size[1]}`]);
    }
    const icons = {
       pomodoroIcon: (
@@ -121,8 +123,12 @@ export function Icon( { name, size }: { name: iconType, size?: number } ) {
          <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.9115 8.80583L2.84406 13.9567L0.961665 12.0433L6.02911 6.89245L1.0675 1.84914L2.85992 0.0272091L7.82153 5.07052L12.7673 0.0433371L14.6497 1.95672L9.70392 6.9839L14.6655 12.0272L12.8731 13.8491L7.9115 8.80583Z" fill="#C4C4C4"/>
          </svg>
+      ),
+      arrowIcon: (
+         <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 1L8 8L1 1" stroke="#B7280F" strokeWidth="2"/>
+         </svg>
       )
-
    };
 
    return (

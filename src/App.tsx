@@ -1,17 +1,25 @@
 import React from "react";
 import "./App.global.sass";
-import { Header } from "./components/Header";
-import { Content } from "./components/Content";
 import { store } from "./store/store";
 import { Provider } from "react-redux";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { Login } from "./components/Login";
+import { Timer } from "./components/Timer";
+import { Stats } from "./components/Stats";
+import { TimerRoute } from "./routes/TimerRoute";
+import { StatsRoute } from "./routes/StatsRoute";
 
 export function App() {
    return (
-      <div>
+      <BrowserRouter>
          <Provider store={store}>
-            <Header/>
-            <Content/>
+            <Routes>
+               <Route path="/" element={<Navigate to="/login"/>}/>
+               <Route path="/login" element={<Login/>}/>
+               <Route path="/timers" element={<TimerRoute/>}/>
+               <Route path="/stats" element={<StatsRoute/>}/>
+            </Routes>
          </Provider>
-      </div>
+      </BrowserRouter>
    );
 }

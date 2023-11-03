@@ -31,21 +31,28 @@ export const tasksListSlice = createSlice({
          ];
       },
       removeTask: ( state, action: PayloadAction<string> ) => {
-         const list = state.tasksList.map((item) => {
-            return {
-               ...item,
-            } as ITask;
+         const list = state.tasksList.filter(( item ) => {
+            if (item.task === action.payload) {
+               return item;
+            }
          });
          const taskIndex = findTaskIdByTaskname(action.payload, list);
-         if (typeof taskIndex !== 'undefined') {
+         if (typeof taskIndex !== "undefined") {
             state.tasksList.splice(taskIndex, 1);
          }
+      },
+      addTomato: ( state, action: PayloadAction<ITask> ) => {
+         state.tasksList.forEach(( item ) => {
+            if (item.task === action.payload.task) {
+               item.tomatoes++;
+            }
+         });
       }
    }
 
 });
 
-export const { addTask, removeTask } = tasksListSlice.actions;
+export const { addTask, removeTask, addTomato } = tasksListSlice.actions;
 
 export const selectTasks = ( state: RootState ) => state.tasksList;
 

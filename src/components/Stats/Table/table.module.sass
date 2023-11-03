@@ -34,6 +34,7 @@
 .box4,
 .box5,
 .box6
+  width: 405px
   min-height: 179px
 
 .box1,
@@ -42,6 +43,22 @@
 .box5,
 .box6
   padding: 25px
+
+.box4
+  background-image: url("../../../images/focus.svg")
+  background-repeat: no-repeat
+  background-position: 91% 51%
+
+.box5
+  background-image: url("../../../images/clock.svg")
+  background-repeat: no-repeat
+  background-position: 91% 51%
+  background-color: $whiteF4
+
+.box6
+  background-image: url("../../../images/stop.svg")
+  background-repeat: no-repeat
+  background-position: 91% 51%
 
 .topContainer
   display: flex
@@ -85,5 +102,45 @@
   line-height: 76px
   color: $text
 
+.bottomLast:last-of-type
+  margin-top: -4px
+  font-size: 72px
+
 .bottomTitle
   margin-bottom: 21px
+
+.tomatoesCount
+  font-size: 24px
+  font-weight: 700
+  line-height: 33px
+  color: $grey99
+  margin-top: 26px
+
+.activeTomatoContainer
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: 15px
+
+.activeTomato
+  margin-top: -4px
+
+.tomatoBanner
+  position: absolute
+  bottom: 0
+  right: 0
+  left: 0
+  height: 51px
+  margin: 0
+  padding: 10px 78px
+  font-size: 24px
+  font-weight: 700
+  line-height: 33px
+  color: $white
+  background-color: $red
+
+.workTime
+  font-size: 16px
+  font-weight: 700
+  line-height: 28px
+

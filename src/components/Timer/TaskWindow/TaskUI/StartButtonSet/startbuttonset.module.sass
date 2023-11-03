@@ -1,0 +1,27 @@
+@import "../../../../../utilities/sass/colors"
+
+.stopButton
+  color: $greyC4
+  background-color: transparent
+  outline: 2px solid $greyC4
+  outline-offset: -2px
+
+.stopButton:not(:disabled):hover
+  color: $white
+  background-color: $redHover
+  outline-color: $redHover
+
+button
+  padding: 19px 50px
+  font-size: 16px
+  font-weight: 500
+  line-height: 17px
+  border: none
+  transition: background-color .3s ease-in-out, outline-color .3s ease-in-out
+
+.startButton
+  color: $white
+  background-color: $military
+
+.startButton:hover
+  background-color: $militaryHover

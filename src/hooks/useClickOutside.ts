@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, SyntheticEvent, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 interface IUseClickOutsideProps {
    onClose: () => void;

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Formik, Form, Field, FormikErrors } from "formik";
 import styles from "../../components/Login/login.module.sass";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { login } from "../../store/features/login/loginSlice";
+import { useNavigate } from "react-router-dom";
+import { useStoreLogin } from "../../hooks/useStoreLogin";
 
 interface IUserDataProps {
    username: string;
@@ -12,6 +14,11 @@ interface IUserDataProps {
 
 export function LoginForm() {
    const dispatch = useAppDispatch();
+   const navigate = useNavigate();
+   const { storedLogin, setLogin } = useStoreLogin();
+   useEffect(() => {
+      if (storedLogin) navigate("/timers");
+   }, []);
    const initialValues: IUserDataProps = {
       username: "",
       email: "",
@@ -22,8 +29,10 @@ export function LoginForm() {
          validateOnChange
          initialValues={initialValues}
          onSubmit={( values, actions ) => {
-            console.log({ values, actions });
             dispatch(login({ username: values.username, email: values.email }));
+            setLogin(values.email);
+            navigate("/timers");
+            console.log(values.username);
          }}
          validate={( values: IUserDataProps ) => {
             const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
@@ -45,7 +54,7 @@ export function LoginForm() {
             }
             return errors;
          }}
-         isInitialValid={false}
+         validateOnMount={false}
       >
          {( { isValid } ) => (
             <Form className={styles.form}>
